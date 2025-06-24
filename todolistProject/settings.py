@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fjhgy7!#2kook01&$-$(+_@n)lo$f38h6zolcxzu@t#k$99cn1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-15-164-98-65.ap-northeast-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['ec2-15-164-98-65.ap-northeast-2.compute.amazonaws.com','127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders'
     'todoApp',
     'userApp',
 ]
@@ -50,7 +51,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS =True
 
 ROOT_URLCONF = 'todolistProject.urls'
 
