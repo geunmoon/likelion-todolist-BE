@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fjhgy7!#2kook01&$-$(+_@n)lo$f38h6zolcxzu@t#k$99cn1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-13-209-40-116.ap-northeast-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['ec2-13-209-40-116.ap-northeast-2.compute.amazonaws.com','127.0.0.1']
 
 
 # Application definition
@@ -54,7 +54,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware'
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173"
+]
 CORS_ALLOW_CREDENTIALS =True
 
 ROOT_URLCONF = 'todolistProject.urls'
