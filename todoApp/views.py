@@ -32,6 +32,8 @@ class Todos(APIView):
         if sort_by not in ['created_at', 'updated_at']:
             sort_by = 'created_at'
 
+        todos = todos.order_by(sort_by)
+
         serializer = TodoSerializer(todos, many=True)
         return Response(serializer.data)
 
